@@ -1,0 +1,30 @@
+
+<div id="container-barra-etapa-fluxo" class="container-barra-etapa-fluxo">
+
+    <span ng-show="exibirSetas" id="scroll-left" class="pull-left seta">
+        <i class="fa fa-arrow-left"></i>
+    </span>
+
+    <span ng-show="exibirSetas" id="scroll-right" class="pull-right seta direita">
+        <i class="fa fa-arrow-right"></i>
+    </span>
+
+    <ul id="barra-etapa-fluxo" class="barra-etapa-fluxo slider" ng-class="{'bloqueado':estaBloqueado()}">
+
+        <li ng-repeat="etapa in obterEtapas() track by $index" ng-class="{'ativo':eAtual(etapa),'selecionado':eSelecionado(etapa)}"  ng-click="eventoClick(etapa);">
+
+            <div ng-bind-html="obterAtributoExibicao(etapa);"></div>
+
+            <i class="fa"></i>
+
+        </li>
+
+        <li ng-if="obterEtapas().length==0;">
+
+            <div ng-bind-html="'Sem dados para exibir.'"></div>
+
+        </li>
+
+    </ul>
+
+</div>

@@ -1,0 +1,109 @@
+    .softdaytimeline{
+        height: 45px;
+        margin-top: 2px;
+    }
+
+    .softdaytimeline .panel    {
+        margin: 0;    
+        height: 100%;
+    }
+
+    .softdaytimeline .panel-body    {
+        padding: 0px 10px;    
+        height: 100%;
+    }
+
+    .softdaytimeline .timeline{
+        width: 100%;
+        background-color: #f5f5f5;
+        height: 10px;
+        display: block;
+        margin-top: 18px;
+        border-radius: 3px;
+        -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        overflow: hidden;
+        position: relative;    
+    }
+
+    .softdaytimeline .timeline .fill{
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        -webkit-background-size: 40px 40px;
+        background-size: 40px 40px;
+        width: 50%;
+        font-size: 12px;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        -webkit-transition: width .6s ease;
+        -o-transition: width .6s ease;
+        transition: width .6s ease;
+        float: left;
+        z-index: 1;
+        cursor: pointer;
+        background-color: #466f9e;
+    }
+
+    .softdaytimeline .moving{
+        -webkit-animation: progress-bar-stripes 2s linear infinite;
+        -o-animation: progress-bar-stripes 2s linear infinite;
+        animation: progress-bar-stripes 2s linear infinite;
+    }
+    
+    .softdaytimeline .timeline-container{
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .softdaytimeline .timeline .transparent{
+        float: left;
+        width: 10%;
+        font-size: 12px;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        -webkit-transition: width .6s ease;
+        -o-transition: width .6s ease;
+        transition: width .6s ease;
+    }
+
+    .softdaytimeline .divisor-container{
+        width: 100%;
+        height: 10px;
+        display: block;
+        z-index: 0;
+        position: absolute;
+    }
+
+    .softdaytimeline .legenda-container{
+        width: 100%;
+        height: 10px;
+        display: block;
+        margin-left: -8px;
+        z-index: 0;
+    }
+
+    .softdaytimeline .divisor{
+        float: left;
+        width: 1px;
+        height: 100%;
+        border-right: 1px solid #ccc;
+    }
+
+    .softdaytimeline .divisor:last-child{
+        border-right: 0px solid #ccc;
+    }
+
+    .softdaytimeline .hora-label{
+        float: left;;
+        top: 10px;
+        font-size: 9px;
+        height: 100%;
+        color: #999;
+    }

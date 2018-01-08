@@ -1,0 +1,56 @@
+.data {
+    padding: 0px;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+}
+::-webkit-clear-button {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.data span.input-group-addon {
+    padding: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+input[type="date"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: none;
+}
+
+::-webkit-datetime-edit {
+
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+
+}
+
+::-webkit-datetime-edit-text {
+
+}
+
+::-webkit-datetime-edit-month-field {
+
+}
+
+::-webkit-datetime-edit-day-field {
+
+}
+
+::-webkit-datetime-edit-year-field {
+
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+    float: right;
+}
+
+::-webkit-calendar-picker-indicator {
+
+}

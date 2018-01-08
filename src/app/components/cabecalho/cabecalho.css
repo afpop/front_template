@@ -1,0 +1,30 @@
+.cabecalho {
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: white;
+    padding: 0px 0px;
+    /*display: none;*/
+}
+
+.cabecalho.visivel {
+    display: block;
+}
+
+.cabecalho i.menu {
+    font-size: 35px;
+    color: white;
+    margin: 6px 0px;
+}
+
+.cabecalho-bottom{
+    padding-left: 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/*TESTE*/
+.cabecalho {background-color: #284154;color: #cccccc;}

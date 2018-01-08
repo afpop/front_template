@@ -1,0 +1,77 @@
+<div class="diretiva-tabela" id="{{obterIdScopo()}}">
+    <div class="col-xs-12">
+        <div class="row row-eq-height no-xs no-sm" ng-if="eExibirControles()">
+            <div class="col-xs-12 controlador-ordenacao" ng-if="eOrdenar()" ng-show="!eOrdenarColuna();">
+                <tabela-ordenador ordenacoes="obterOrdenacoes()" lista="obterLista()" ao-processar-lista="aoOrdenarLista"
+                    span-controladores="12" ordenacao-externa="obterOrdenacaoColuna();"></tabela-ordenador>
+            </div>
+            <div class="col-xs-12 controlador-filtro" ng-if="eFiltrar()">
+                <tabela-filtro atributos-filtro-string="obterFiltros()" lista="obterLista()" ao-processar-lista="aoFiltrarLista" span-controladores="12"></tabela-filtro>
+            </div>
+            <div class="col-xs-12 controlador-paginacao" ng-if="ePaginacao()&&!ePaginacaoEmLista()">
+                <tabela-paginacao lista="obterListaOrdenada()" ao-processar-lista="aoPaginarLista"></tabela-paginacao>
+            </div>
+            <div class="col-xs-12 controlador-menu" ng-if="eMenu()">
+                <label class="invisible">Menu</label>
+                <tabela-botao-menu entradas="obterMenuTabela()" classe="'btn-sm btn-default'" lista-canto-direito="true"></tabela-botao-menu>
+            </div>
+            <div class="col-xs-12 controlador-menu" ng-if="eMenu()">
+                <label class="invisible">Menu</label>
+                <tabela-botao-menu entradas="obterMenuTabela()" classe="'btn-sm btn-default'" lista-canto-direito="true"></tabela-botao-menu>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="tabela" ng-class="{'listrada':eListrada()}">
+            <div class="tabela-linha tabela-cabecalho equal-height" ng-class="{'tabela-linha-opcoes-ativa':possuiOpcoesLinha()}">
+                <div class="tabela-controladores equal-height" style="width:5%;">
+                    <checkbox ng-if="eSelecao()" class="btn-checkbox" ng-model="selecionarTudo" ng-change="alternarSelecaoLista(selecionarTudo, obterListaPaginada())"
+                        indeterminate="true"></checkbox>
+                </div>
+                <div class="tabela-colunas equal-height">
+                    <div class="coluna" ng-class="{'ordenada-asc':(eOrdenacaoColuna(coluna)&&!eOrdenacaoColunaDecrescente(coluna)),'ordenada-desc':(eOrdenacaoColuna(coluna)&&eOrdenacaoColunaDecrescente(coluna))}"
+                        ng-click="ordenarPor(coluna,(!obterOrdenacaoColuna().decrescente));" style="width:{{obterColunaLargura(coluna,'%;')}}"
+                        ng-repeat="coluna in obterColunas()">
+                        <span ng-bind-html="obterColunaTitulo(coluna)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="tabela-linha tabela-corpo" ng-class="{'selecionada':eLinhaSelecionada(linha),'marcada':eLinhaMarcada(linha)}"
+                ng-click="marcarLinha(linha);" ng-repeat="linha in obterListaPaginada()">
+                <div class="tabela-linha equal-height" ng-class="{'tabela-linha-opcoes-ativa':possuiOpcoesLinha()}">
+                    <div class="tabela-controladores equal-height" style="width:5%;">
+                        <checkbox ng-if="eSelecao()" class="btn-checkbox" ng-model="obterListaSelecao()[obterListaIndiceItem(linha,obterLista())]"></checkbox>
+                        <tabela-botao-menu ng-if="obterMenuLinha().length>0" entradas="obterMenuLinha()" classe="'btn-xs btn-default'" item="linha"></tabela-botao-menu>
+                        <tabela-botao-menu ng-if="obterSubTabelaMenuExpancao(linha).length>0" entradas="obterSubTabelaMenuExpancao(linha)" classe="'btn-xs btn-default'"
+                            classe-icone="'fa-expand'" item="linha"></tabela-botao-menu>
+                    </div>
+                    <div class="tabela-colunas equal-height">
+                        <div class="coluna" style="width:{{obterColunaLargura(coluna,'%;')}}" ng-repeat="coluna in obterColunas()">
+                            <span data-titulo="{{obterColunaTitulo(coluna)}}" ng-if="!eDiretiva(coluna)"
+                                ng-bind-html="obterColunaListaValor(linha,coluna)"></span>
+                            <span data-titulo="{{obterColunaTitulo(coluna)}}" ng-if="eDiretiva(coluna)" ng-include="'app/common/directive/dctv-tabela/dctv-tabela-diretivas.tpl.html'"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabela-linha tabela-sub-tabela" uib-collapse="obterSubTabelaExpancao(linha,subTabela)" ng-repeat="subTabela in obterSubTabelas()">
+                    <dctv-tabela colunas="obterSubTabelaColunas(subTabela)" lista="obterSubTabelaLinhas(subTabela,linha)" opcoes="obterSubTabelaOpcoes(subTabela)"></dctv-tabela>
+                </div>
+            </div>
+            <div class="tabela-linha tabela-corpo" ng-if="obterListaPaginada().length==0;">
+                <div class="tabela-linha">
+                    <div class="tabela-colunas equal-height">
+                        <div class="coluna"><span>Não há registros para exibir.</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12 form-group" style="margin-top: 5px;" ng-if="ePaginacao()&&ePaginacaoEmLista()">
+                <tabela-paginacao lista="obterListaOrdenada()" ao-processar-lista="aoPaginarLista" paginacao-lista="ePaginacaoEmLista()"
+                    exibir-itens-por-pagina="false"></tabela-paginacao>
+            </div>
+        </div>
+    </div>
+</div>

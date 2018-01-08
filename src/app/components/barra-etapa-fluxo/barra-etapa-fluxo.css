@@ -1,0 +1,187 @@
+.container-barra-etapa-fluxo{
+}
+
+.container-barra-etapa-fluxo .seta{
+    position: absolute;
+    height: 40px;
+    padding: 8px 4px;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    color: white;
+    cursor: pointer;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 11;
+}
+
+.container-barra-etapa-fluxo .seta:hover{
+   color: orange !important;
+}
+
+.direita{
+    right: 0;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.barra-etapa-fluxo {
+    -webkit-align-content: flex-end;
+    display: flex;
+    flex-direction: row-reverse; /* or `column-reverse` */
+    list-style: none;
+    padding-left: 0px;
+    overflow: hidden;
+    /* overflow-x: auto; */
+    border: 1px solid #c9d3dd;
+    border-left: 0;
+    margin-bottom: 0px;
+    flex: 0 0 100%;
+    font-weight: 500;
+    height: 40px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.barra-etapa-fluxo * {
+    transition: all 0.2s;
+}
+
+.barra-etapa-fluxo li {
+    position: relative;
+    margin-left: 0;
+    padding: 0;
+    text-align: center;
+    border-right: none;
+    max-width: 100%;
+    width: 100%;
+    font-size: 13px;
+    bottom: 0;
+    top: 0;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-smooth: auto;
+}
+
+.barra-etapa-fluxo li:first-child {
+    border-right: 1px solid #c9d3dd;
+}
+
+.barra-etapa-fluxo li.ativo ~ li > i:after {
+    content: "\f00c";
+    padding: 4px;
+    /* margin-left: 30px; */
+    color: #ffffff;
+    border-radius: 50%;
+    background-color: #18922c;
+}
+
+.barra-etapa-fluxo li.ativo > i:after {
+    content: "\f12a";
+    padding: 4px 8px;
+    /* margin-left: 30px; */
+    color: #ffffff;
+    border-radius: 50%;
+    background-color: #ffd600;
+}
+.barra-etapa-fluxo li:first-child {
+    border-right: none;
+}
+
+.barra-etapa-fluxo li:first-child::after {
+    right: -7px;
+    display: none;
+}
+
+.barra-etapa-fluxo li, .barra-etapa-fluxo li::after {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.barra-etapa-fluxo li::after {
+    content:"  ";
+    width: 15px;
+    height: 100%;
+    border-top-right-radius: 80%;
+    border-bottom-right-radius: 80%;
+    border-right: 1px solid #cccccc;
+    position: absolute;
+    right: -15px;
+}
+
+.barra-etapa-fluxo li.ativo ~ li, .barra-etapa-fluxo li.ativo ~ li::after {
+    background-color: #425c6f;
+    color: white;
+    /* border-top-right-radius: 20%; */
+    /* border-bottom-right-radius: 23%; */
+}
+
+.barra-etapa-fluxo li.ativo ~ li::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.barra-etapa-fluxo li.ativo, .barra-etapa-fluxo li.ativo::after {
+    background-color: #425c6f;
+    color: white;
+}
+
+.barra-etapa-fluxo li.selecionado, .barra-etapa-fluxo li.selecionado::after {
+    background-color: #de8f18 !important;
+    color: white !important;
+}
+
+/* Estilos bloqueado  */
+
+.barra-etapa-fluxo.bloqueado li {
+    cursor: not-allowed;
+}
+
+.barra-etapa-fluxo li div{
+    width: 150px;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra-etapa-fluxo.bloqueado li div span {
+    color: #AAA;
+}
+
+.barra-etapa-fluxo li div span {
+    word-wrap: break-word;
+    word-break: break-word;
+    display: block;
+    width:85%;
+    margin-left: 10px;
+}
+
+.barra-etapa-fluxo li div i {
+    width: 10%;
+    background-color: #18922c;
+    display: block;
+}
+
+.barra-etapa-fluxo.bloqueado li.selecionado div span, .barra-etapa-fluxo.bloqueado li.ativo ~ li  div span{
+    color: white !important;
+}
+
+.barra-etapa-fluxo.bloqueado li.selecionado, .barra-etapa-fluxo.bloqueado li.selecionado::after {
+    background-color: #edbb6f !important;
+}
+
+.barra-etapa-fluxo.bloqueado li.ativo ~ li, .barra-etapa-fluxo.bloqueado li.ativo ~ li::after {
+    background-color: #7a95a9;
+}
+
+.barra-etapa-fluxo.bloqueado li.ativo ~ li > i:after {
+    background-color: #82bb8b;
+}
+

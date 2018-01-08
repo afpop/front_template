@@ -1,0 +1,107 @@
+.soft-dial{
+    height: 42px;
+    width: 42px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.soft-dial .soft-dial-options{
+    position: relative;
+    display:none;
+    text-align: center;
+    margin-left: -3px;
+    z-index: 9999 !important    ;
+}
+
+.soft-dial .soft-dial-option{
+    padding: 4px;
+}
+
+.soft-dial .soft-dial-option .btn{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.soft-dial .soft-dial-option-tooltip{
+    display: block;
+    float:left;
+    color: white;
+    margin-top: 5px;
+    padding: 5px 10px 5px 10px;
+    background-color: rgba(0,0,0, 0.8);
+    position: relative;
+    margin-left: -50px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 10px;
+}
+
+.soft-dial .soft-dial-button{
+
+}
+
+.soft-dial .soft-dial-button .btn{
+    font-size: 12px;
+    text-align: center;
+    padding: 7px;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.soft-dial .btn:focus {
+    outline: none;
+}
+
+
+.pie-25{
+    background-image: linear-gradient(to right, transparent 50%, #d35400 0);
+}
+
+.pie-25::before {
+    content: '';
+    display: block;
+    margin-left: 130%;
+    margin-top: 0px;
+    height: 100%;
+    width: 300%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    transform: rotate(90deg);
+}
+
+.pie-50{
+    background-image: linear-gradient(to right, transparent 50%, #d35400 0);
+}
+
+.pie-75{
+    background-image: linear-gradient(to right, transparent 50%, #d35400 0);
+}
+
+.pie-75::before {
+    content: '';
+    display: block;
+    margin-left: -3px;
+    margin-top: 0px;
+    height: 100%;
+    width: 300%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: #d35400;
+    transform-origin: left;
+    transform: rotate(90deg);
+}
+
+.pie-100{
+    background-image: linear-gradient(to right, transparent 0%, #d35400 0);
+}
+
+.pie-color{
+    background-color: #FFFFFF;
+}
+

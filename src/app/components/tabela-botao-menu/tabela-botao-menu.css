@@ -1,0 +1,21 @@
+.tabela-botao-menu .text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tabela-botao-menu {
+    min-width: 10%;
+}
+
+.tabela-botao-menu .btn {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.tabela-botao-menu .btn:first-child {
+    margin-left: 0px;
+}
+
+.tabela-botao-menu .btn:nth-last-child(2) {
+    margin-right: 0px;
+}

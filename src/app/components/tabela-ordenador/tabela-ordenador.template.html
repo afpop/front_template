@@ -1,0 +1,20 @@
+<div class="row tabela-filtro-paginacao">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12 col-md-{{obterGridSpan()}} form-group" ng-repeat="ordenacao in obterOrdenacoes()">
+                <label class="fonte-tamanho-padrao">{{ordenacao.titulo}}</label>
+                <ui-select ng-model="ordenacao.valor"
+                           theme="bootstrap"
+                           on-select="ordenar(obterOrdenacoes())">
+                    <ui-select-match placeholder="{{ordenacao.titulo}}">
+                        {{$select.selected.titulo}}
+                    </ui-select-match>
+                    <ui-select-choices
+                            repeat="valor in obterOrdenacaoValores(ordenacao) | filter: $select.search">
+                        <span ng-bind-html="valor.titulo| highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+</div>

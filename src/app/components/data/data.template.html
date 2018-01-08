@@ -1,0 +1,19 @@
+<div class="row data">
+    <div class="col-xs-12" ng-class="{'col-md-12':(!eRange()),'col-md-6':(eRange())}">
+        <div class="input-group row-eq-height">
+            <span class="input-group-addon vcenter" ng-if="eRange()"> Início </span>
+            <input value="" type="date" class="form-control input-sm data" ng-model="html5DataInicio" ng-change="alterarData(html5DataInicio,(eRange()?1:0))"
+                   min="{{obterRangeMin()}}" max="{{obterRangeMax()}}" required="true" ng-disabled="desativar">
+            <span ng-if="eExibirIcone()&&!eRange()" class="input-group-addon  seta">
+                <i class="fa fa-calendar seta"></i>
+            </span>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6" ng-if="eRange();">
+        <div class="input-group row-eq-height">
+            <span class="input-group-addon vcenter" ng-if="eRange()"> Fim </span>
+            <input value="" type="date" class="form-control input-sm data" ng-if="eRange()" ng-model="html5DataFim" ng-change="alterarData(html5DataFim,2)"
+                   min="obterDataFormatada(dataMinima)" max="obterDataFormatada(dataMaxima)" required="true" ng-disabled="desativar">
+        </div>
+    </div>
+</div>

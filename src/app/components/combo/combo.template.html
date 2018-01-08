@@ -1,0 +1,9 @@
+<div class="row combo">
+    <div class="col-xs-12">
+        <selectize config="config" options='lista' ng-model="privateModel" ng-disabled="desativar"></selectize>
+        <div class="comboLoading" ng-class="{'comboLoadingSingle' : multiplo, 'comboLoadingMulti' : !multiplo}" ng-show="estaCarregando()">
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
+    </div>
+    
+</div>

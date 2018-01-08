@@ -1,0 +1,55 @@
+.combo {
+
+}
+
+.combo .multiplo:hover {
+    overflow-x: auto;
+    text-overflow: initial;
+}
+
+.combo .multiplo > .item {
+    border: 1px solid #cccccc;
+    background-color: #eeeeee;
+    margin: 0px 4px;
+    padding: 0px 4px;
+}
+
+.selectize-input{
+    /* height: 30px!important; */
+    padding: 6px 12px!important;
+}
+
+.selectize-input input[type=text]{
+    height:18px!important;
+}
+
+.selectize-control.multi .selectize-input > div {
+    padding: 0px 6px !important;
+    padding-right: 24px !important;
+}
+
+.comboLoading {
+    display: block;
+    float: right;
+    margin-top: -28px;
+    margin-right: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.comboLoadingSingle {
+    margin-top: -28px;
+    margin-right: 10px;
+}
+
+.comboLoadingMulti {
+    margin-top: -30px;
+    margin-right: 12px;
+    background-color: #fff;
+}
+
+.selectize-control .selectize-input.disabled, .selectize-control .selectize-input.disabled *{
+    opacity: 1!important;
+    background-color: #fff!important;
+    cursor: not-allowed!important;
+}

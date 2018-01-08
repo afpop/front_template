@@ -1,0 +1,21 @@
+.lista-texto {
+
+}
+
+.lista-texto .lista-texto {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding-top: 8px;
+    background-color: white;
+}
+
+.lista-texto .icone-expancao {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    transition: all 0.2s;
+}
+
+.lista-texto .icone-expancao:hover {
+    transform:scale(1.2,1.2)
+}

@@ -1,0 +1,47 @@
+
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-class="{'visivel': isVisivel()}">
+
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" ng-click="redirecionarInicio()" style="cursor: pointer" title="Ir para página inicial">
+                    <img alt="Brand" src="assets/images/cebrace-logo-without-text.png" style="margin-top: -2px; height: 30px; width: auto;">
+            </a>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <cabecalho-abas></cabecalho-abas>
+
+            <div class="navbar-form navbar-left">
+
+                <span title="{{obterTituloCabecalho()}}" ng-bind-html="obterMensagemCabecalho();" style="font-size: 26px;"></span>
+
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><label ng-show="usuario" class="label label-warning" style="text-transform: uppercase; font-size: 16px; margin-top: 10px; display: block;">{{usuario()}}</label></li>
+
+                    <li>
+                        <i ng-hide="iconeCabecalho()" class="fa fa-bars menu" ng-click="alternarVisibilidadeMenuDireito()"></i>
+                        <i ng-show="iconeCabecalho()" class="fa fa-close menu" ng-click="alternarVisibilidadeMenuDireito()"></i>
+                    </li>
+
+                </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+

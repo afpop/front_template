@@ -1,0 +1,62 @@
+ul.visualizacao-arvore {
+    padding-left: 0px;
+    height:calc(100% - 40px);
+}
+
+ul.visualizacao-arvore > li {
+    list-style: none;
+    max-width: 100vw;
+    min-height: 25px;
+}
+
+ul.visualizacao-arvore > li span span{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+ul.visualizacao-arvore > li > ul.visualizacao-arvore {
+    display: none;
+}
+
+ul.visualizacao-arvore > li.aberto > ul.visualizacao-arvore {
+    display: block;
+}
+
+ul.visualizacao-arvore ul.visualizacao-arvore {
+    padding-left: 15px;
+}
+
+ul.visualizacao-arvore > li.selecionado > span {
+    color: #de8f18;
+    font-weight: 600;
+}
+
+ul.visualizacao-arvore.bloqueado {
+    color: #AAA;
+    cursor: not-allowed;
+}
+
+ul.visualizacao-arvore.bloqueado > li {
+    color: #AAA;
+    cursor: not-allowed;
+}
+
+ul.visualizacao-arvore.bloqueado > li  span {
+    color: #AAA;
+    cursor: not-allowed;
+}
+
+ul.visualizacao-arvore.bloqueado > li  span i {
+    color: #AAA;
+    cursor: not-allowed;
+}
+
+ul.visualizacao-arvore > li span i.status-completo {
+    color: #33a54a;
+}
+
+ul.visualizacao-arvore > li span i.status-execucao {
+    color: #efcb00;
+}

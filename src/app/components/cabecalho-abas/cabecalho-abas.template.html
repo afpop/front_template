@@ -1,0 +1,12 @@
+
+<ul class="nav navbar-nav">
+
+    <li ng-class="{'active':isAbaSelecionada(aba),'disabled':isAbaDesativada(aba)}" ng-click="cliqueAba(aba)" ng-show="!isAbaDesativada(aba)" ng-repeat="aba in obterListaAbas();">
+
+        <i class="{{obterIconeAba(aba)}}"></i>
+
+        <span ng-bind-html="obterDescricaoAba(aba)"></span>
+
+    </li>
+
+</ul>

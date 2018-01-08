@@ -1,0 +1,34 @@
+<div class="menu-direito" ng-class="{'visivel':isVisivel()}" ng-style="obterStyle();">
+
+    <div class="row menu-rota">
+
+        <div class="col-xs-12">
+
+            <ul class="menu-vertical">
+
+                <li ng-repeat="menu in obterItensMenuDireito();" ng-click="redirecionar(menu);">
+
+                    <i class="{{menu.icone}}"></i>
+
+                    <span style="margin-left: 10px;" ng-bind-html="menu.nome"></span>
+
+                    <span ng-click="atualizarModuloInicial(menu)" title="Marcar como favorito" class="pull-right fa fa-star" ng-style=" moduloInicial() === menu.state ? { 'color': '#f1c40f' } : ''"></span>
+
+                </li>
+
+                <li ng-click="sair();">
+
+                    <i class="fa fa-sign-out"></i>
+
+                    <span style="margin-left: 10px">Sair</span>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+

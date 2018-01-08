@@ -1,0 +1,15 @@
+<div class="row tabela-filtro-paginacao">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12 col-md-{{obterGridSpan()}} form-group">
+                <label class="fonte-tamanho-padrao">Filtro</label>
+                <div class="input-group">
+                    <input class="form-control input-sm" ng-model="textoFiltro" ng-change="processarListaTexto(textoFiltro);">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search"></i>
+					</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

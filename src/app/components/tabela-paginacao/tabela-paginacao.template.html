@@ -1,0 +1,46 @@
+<div class="row tabela-filtro-paginacao">
+    <div class="col-xs-12">
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-{{obterGridSpan()}}" ng-if="ePaginacaoLista()" ng-class="{'col-md-offset-{{obterGridSpan()/2}} text-center':!eExibirItensPorPagina()}">
+                <ul class="pagination-sm" uib-pagination total-items="obterTotalItens()" ng-model="paginaAtual" max-size="5" ng-change="aoAlterarPaginaAtual(paginaAtual)" class="pagination" items-per-page="obterItensPorPagina()" boundary-link-numbers="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-{{obterGridSpan()}} form-group paginacao" ng-if="!ePaginacaoLista()">
+                <label class="fonte-tamanho-padrao">Paginação</label>
+                <div class="input-group">
+					<span class="input-group-btn">
+						<button class="btn btn-default btn-sm" ng-click="retrocederPaginacao()">
+							<i class="fa fa-minus"></i>
+						</button>
+					</span>
+                    <input id="pagina-atual-{{obterIdEscopo()}}" type="text" class="form-control input-sm" ng-model="paginaAtual"
+                           ng-change="aoAlterarPaginaAtual(paginaAtual)">
+                    <span class="input-group-addon">/ {{obterNumeroTotalPaginas()}}</span>
+                    <span class="input-group-btn">
+						<button class="btn btn-default btn-sm" ng-click="avancarPaginacao()">
+							<i class="fa fa-plus"></i>
+						</button>
+					</span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-{{obterGridSpan()}} form-group" ng-if="eExibirItensPorPagina()">
+                <label class="fonte-tamanho-padrao">Itens por Página</label>
+                <div class="input-group">
+					<span class="input-group-btn">
+						<button class="btn btn-default btn-sm" ng-click="diminuirItensPorPagina()">
+							<i class="fa fa-minus"></i>
+						</button>
+					</span>
+                    <input type="text" class="form-control input-sm" ng-model="itensPorPagina" ng-change="aoAlterarItensPorPagina(itensPorPagina)" ng-disabled="true">
+                    <span class="input-group-addon"> de {{obterTotalItens()}} Registros</span>
+                    <span class="input-group-btn">
+						<button class="btn btn-default btn-sm" ng-click="aumentarItensPorPagina()">
+							<i class="fa fa-plus"></i>
+						</button>
+					</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

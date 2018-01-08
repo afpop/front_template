@@ -1,0 +1,67 @@
+<div class="row lista-texto">
+
+    <div class="col-xs-12">
+
+        <div class="row">
+
+            <!--
+            <div class="col-xs-12 form-group">
+                <div class="input-group">
+                    <input class="form-control input-sm" ng-model="texto" placeholder="{{obterPlaceholder()}}">
+                    <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default" ng-click="adicionarTexto(texto);"><span>Adicionar</span></spa></button>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-xs-12">
+                <div class="lista-texto scroll-y" ng-style="obterAltura();">
+                    <ul>
+                        <li ng-repeat="item in modelo" title="{{obterFormatoTitle(item)}}" style="font-size: 12px;">
+                            <span ng-if="obterFormatoPrefixo(item);" ng-bind-html="obterFormatoPrefixo(item)"></span>
+                            <span ng-bind-html="obterModeloTexto(item)"></span>
+                        </li>
+                    </ul>
+                    <i ng-click="abrirModalExpancao();" class="fa fa-search-plus icone-expancao cursor-pointer"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div id="modal-descricao-expancao-{{obterIdEscopo()}}" class="modal fade" role="dialog">
+                <div class="modal-dialog" style="width: 95vw;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row row-eq-height">
+                                <div class="col-xs-12 col-md-8 vleft">
+                                    <h4 class="modal-title">Descrição</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="lista-texto scroll-y" ng-style="obterAltura();">
+                                            <ul>
+                                                <li ng-repeat="item in modelo" title="{{obterFormatoTitle(item)}}" style="font-size: 12px;">
+                                                    <span ng-if="obterFormatoPrefixo(item);" ng-bind-html="obterFormatoPrefixo(item)"></span>
+                                                    <span ng-bind-html="obterModeloTexto(item)"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

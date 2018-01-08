@@ -1,0 +1,24 @@
+
+<ul class="visualizacao-arvore" ng-class="{'bloqueado':estaBloqueado()}" context-menu="obterOpcoesRightClick();">
+
+    <li ng-repeat="item in obterListaExibicao() track by item.id" ng-class="{'aberto':eListaAberta(item),'selecionado':eSelecionado(item)}"
+        context-menu="obterOpcoesRightClick();" ng-right-click="selecionar(item);">
+
+        <span class="row-eq-height">
+            <i class="fa vleft" ng-class="{'fa-plus':!eListaAberta(item)&&obterProximoNivelLista(item).length>0,'fa-minus':eListaAberta(item)&&obterProximoNivelLista(item).length>0,'fa-circle':obterProximoNivelLista(item).length==0, 'status-execucao' :estaEmExecucao(item), 'status-completo': estaCompleto(item)}"
+                style="margin-right: 4px;" ng-click="alternarListaExibicao(item);"></i>
+            <span ng-bind-html="obterItemTitulo(item);" class="vleft" ng-click="selecionar(item);"></span>
+        </span>
+
+        <visualizacao-arvore ng-if="obterProximoNivelLista(item).length>0;" 
+            lista="obterProximoNivelLista(item)"
+            titulo="obterProximoNivelItemTitulo();"
+            opcoes="obterProximoNivelOpcoes();"
+            opcoes-right-click="obterOpcoesRightClick"
+            ao-selecionar="aoSelecionar"
+            selecionado="selecionado">
+        </visualizacao-arvore>
+
+    </li>
+
+</ul>

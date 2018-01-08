@@ -1,0 +1,64 @@
+.menu-direito {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    background: white;
+    transition: width 0.4s, background-color 0.4s;
+    overflow: hidden;
+    z-index: 1032;
+}
+
+.menu-direito.visivel {
+    border-left: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 1);
+    width: 25%;
+}
+
+.menu-direito ul.menu-vertical {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.1s linear;
+}
+
+.menu-direito.visivel ul.menu-vertical {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .menu-direito.visivel {
+        background-color: rgba(255, 255, 255, 1);
+        width: 100%;
+    }
+
+}
+
+.menu-rota ul.menu-vertical {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.menu-rota ul.menu-vertical li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.menu-rota ul.menu-vertical li:hover {
+    background-color: #284154;
+    color: white;
+}
+
+.menu-rota ul.menu-vertical li .fa-star {
+    color: #bdc3c7;
+}
+
+
+.menu-rota ul.menu-vertical li .fa-star:hover {
+    color: #f1c40f;
+}

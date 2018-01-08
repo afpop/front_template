@@ -1,0 +1,153 @@
+<div class="row">
+
+    <div class="col-xs-12">
+
+        <div class="row">
+
+            <div class="col-xs-12 col-md-12">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-10 form-group">
+                        <label class="control-label">Titulo</label>
+                        <input tabindex="22" class="form-control input-sm" type="text" placeholder="{{obterModelo().descricaoPlaceholder}}" ng-model="obterModelo().descricao"
+                            ng-disabled="!estaEditando || bloquearPainel">
+                    </div>
+
+                    <div class="col-xs-12 col-md-2 form-group">
+                        <label class="control-label">Sequência</label>
+                        <input tabindex="23" class="form-control input-sm" type="text" ng-model="obterModelo().sequencia" ng-disabled="!estaEditando || bloquearPainel">
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-4 form-group">
+                        <label class="control-label">Tipo</label>
+                        <combo tabindex="24" modelo="obterModelo().tipo" lista="listasCombo.tiposRequisicao" propriedades-exibicao="propriedadesExibicaoCombo.tipoRequisicao"
+                            placeholder="placeholdersCombo.tiposRequisicao" desativar="!estaEditando || obterModelo().id != 0 || bloquearPainel"></combo>
+                    </div>
+
+                    <div class="col-xs-12 col-md-5 form-group">
+                        <label class="control-label">Solicitante</label>
+                        <!-- <select class="form-control" ng-model="obterModelo().solicitante" ng-disabled="!estaEditando">
+                            <option ng-repeat="solicitante in listasCombo.solicitantes" value="{{solicitante}}" ng-selected="obterModelo().solicitante.login==solicitante.login">{{solicitante.nome}}</option>
+                        </select> -->
+                        <softselect tabindex="25" ss-disabled="!estaEditando || bloquearPainel" ss-model="obterModelo().solicitante" ss-data="listasCombo.solicitantes" ss-field="propriedadesExibicaoCombo.solicitante2"
+                        ss-change="vm.carregarDepartamento"></softselect>
+                        <!-- <combo tabindex="25" modelo="obterModelo().solicitante" lista="listasCombo.solicitantes" propriedades-exibicao="propriedadesExibicaoCombo.solicitante"
+                            placeholder="placeholdersCombo.solicitante" desativar="!estaEditando || bloquearPainel"></combo> -->
+                    </div>
+
+                    <div class="col-xs-12 col-md-3 form-group">
+                        <label class="control-label">Equipe</label>
+                        <combo tabindex="26" modelo="obterModelo().equipe" lista="listasCombo.equipes" propriedades-exibicao="propriedadesExibicaoCombo.equipe"
+                            placeholder="placeholdersCombo.equipe" desativar="!estaEditando || bloquearPainel"></combo>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-6 form-group">
+                        <label class="control-label">Responsável</label>
+                        <softselect tabindex="25" ss-disabled="!estaEditando || bloquearPainel" ss-model="obterModelo().responsavel" ss-data="listasCombo.responsaveis" ss-field="propriedadesExibicaoCombo.responsavel2"
+                        ss-change="vm.carregarDepartamento"></softselect>
+                        <!-- <combo tabindex="27" modelo="obterModelo().responsavel" lista="listasCombo.responsaveis" propriedades-exibicao="propriedadesExibicaoCombo.responsavel"
+                            placeholder="placeholdersCombo.responsavel" desativar="!estaEditando || bloquearPainel"></combo> -->
+                    </div>
+
+                    <div class="col-xs-12 col-md-3 form-group">
+
+                        <label class="control-label">Início</label>
+                        <data tabindex="28" modelo="obterModelo().inicio" desativar="temTarefasFilhas() || !estaEditando || bloquearPainel"></data>
+
+                    </div>
+
+                    <div class="col-xs-12 col-md-3 form-group">
+
+                        <label class="control-label">Fim</label>
+                        <data tabindex="29" modelo="obterModelo().fim" desativar="temTarefasFilhas() || !estaEditando || bloquearPainel"></data>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-2 form-group">
+                        <label class="control-label">Dias</label>
+                        <input tabindex="30" class="form-control input-sm" type="text" placeholder="Dias" maxlength="3" ng-model="obterModelo().dias"
+                            ng-disabled="true || bloquearPainel">
+                    </div>
+
+                    <div class="col-xs-12 col-md-2 form-group">
+                        <label class="control-label">Horas</label>
+                        <input tabindex="31" class="form-control input-sm" ng-click="selecionaTudo($event)" type="text" placeholder="Horas" ng-model="obterModelo().horas"
+                            maxlength="7" ng-disabled="!estaEditando || temTarefasFilhas() || bloquearPainel">
+                    </div>
+
+                    <div class="col-xs-12 col-md-2 form-group" style="text-align: center;">
+
+                        <label class="control-label">Conclusão</label>
+
+                        <softdial sd-data="data" sd-model="obterModelo().porcentagem" ng-disabled="!estaEditando || bloquearPainel || temTarefasFilhas() "></softdial>
+
+                    </div>
+
+                    <div class="col-xs-12 col-md-2">
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+
+                        <label class="control-label">&nbsp;</label>
+
+                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-sm btn-primary" ng-show="obterPermissao('editarTarefa')" ng-click="editar()" ng-if="!estaEditando" ng-disabled="bloquearPainel || estaEditando">
+                                    <i class="fa fa-pencil"></i> Editar
+                                </button> 
+
+                                <button role="group" type="button" class="btn btn-sm btn-success" ng-if="estaEditando" ng-click="salvar()" ng-disabled="bloquearPainel || !estaEditando">
+                                    <i class="fa fa-save"></i> Salvar
+                                </button>
+
+                            </div>
+
+                            <div class="btn-group" role="group">
+
+                                <button role="group" type="button" class="btn btn-sm btn-default" ng-show="obterPermissao('editarTarefa')" ng-click="cancelar()" ng-disabled="bloquearPainel || !estaEditando">
+                                    <i class="fa fa-times"></i> Cancelar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+           <!-- <div class="col-xs-12 col-md-3">
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <label class="control-label">Descrição</label>
+                        <lista-texto modelo="obterModelo().notas" formato="obterFormatoNota();" altura="'221px'"></lista-texto>
+                    </div>
+
+                </div>
+
+            </div>
+
+            -->
+
+        </div>
+
+    </div>
+
+</div>

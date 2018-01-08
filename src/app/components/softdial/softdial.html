@@ -1,0 +1,34 @@
+
+ <div class="soft-dial clearfix">
+
+     <div class="soft-dial-options">
+
+         <div class="soft-dial-option" ng-repeat="item in sdData track by $index">
+
+             <p class="soft-dial-option-tooltip">{{item.text}}</p>
+
+             <button class="btn btn-default pie-color {{item.class}}" ng-click="sd_select($event, item)">
+
+                <!-- <i class="fa fa-trash"></i>-->
+
+             </button>
+
+         </div>
+
+     </div>
+
+     <div class="soft-dial-button">
+
+         <button ng-disabled="sdDisabled" class="btn btn-default" ng-click="sd_toggle($event)">
+
+             {{sdSelected.text}}
+
+         </button>
+
+     </div>
+
+ </div>
+
+
+
+

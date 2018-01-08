@@ -1,0 +1,32 @@
+<div class="bg-login">
+
+    <div class="centered">
+
+        <div id="logo" style="text-align:center; margin-top:30px;">
+            <img src="assets/images/cebrace-logo-escuro.png"/>
+        </div>
+
+        <div class="card card-container">
+
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"/>
+
+            <form class="form-signin row">
+                <div class="col-xs-12 form-group">
+                    <input type="text" class="form-control usuario" placeholder="Usuário" required
+                           title="Digite o usuário para entrar" autofocus ng-model="vm.formulario.login"/>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <input type="password" class="form-control password" placeholder="Senha" required
+                           title="Digite uma senha" ng-model="vm.formulario.senha"/>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <button type="submit" ng-click="vm.login()" class="btn btn-orangecbc btn-block">
+                        <span>Entrar</span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
